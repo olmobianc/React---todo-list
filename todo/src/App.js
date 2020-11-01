@@ -15,11 +15,11 @@ class App extends React.Component {
       this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(id) {
+    handleChange(event, id) {
       this.setState((prevState) => {
         const newArray = prevState.todos.map((elem) => {
           if(elem.id === id) {
-            elem.completed = !(elem.completed)
+            elem.completed = event.target.checked
           }
           return elem
         })
